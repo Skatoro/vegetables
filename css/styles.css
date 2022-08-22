@@ -92,6 +92,7 @@ ul{
         margin: 0 auto;
         border: 1px solid #e4e4e5;
         background-color: #fefefe;
+        overflow: hidden;
     }
     .paragraph-underline{
         background: url("../images/paragraph-underline.png") no-repeat;
@@ -225,6 +226,7 @@ ul{
         background: url("../images/sweet.png") no-repeat;
         
     }
+    
     .month-special {
         margin-bottom: 45px;
     }
@@ -237,13 +239,16 @@ ul{
     .month-special .offer-list-wrapper{
         padding: 0 10px 0 10px;
     }
+    .month-special .offer-list-wrapper.two{
+        display: none;
+    }
     .month-special .offer-list{
         list-style: none;
     }
     .month-special .offer-list h3{
         text-transform: none;
         font-weight: bold;
-        font-size: 3.6vw;
+        font-size: 14px;
     }
     .month-special .offer-list h3:after{
         content: "";
@@ -255,7 +260,7 @@ ul{
         margin-bottom: 4%;
     }
     .month-special .offer-list p{
-        font-size: 3vw;
+        font-size: 12px;
         margin-bottom: 4px;
         margin-bottom: 9.5%;
     }
@@ -264,21 +269,24 @@ ul{
         text-align: center;
         font-weight: bold;
         margin-bottom: 5%;
-        font-size: 3.6vw;
+        font-size: 14px;
     }
     .month-special .offer-list li{
-        width: 100%;
+        width: 340px;
+        margin: 0 auto;
         background-color: #f8f8f8;
     }    
     .month-special .offer-list li .container{
-        width: 100%;
     }   
     .month-special .offer-list li img{
         float: left;
-    }    
+    }   
+    .month-special .offer-list li img.pc{
+        display: none;
+    }   
     .month-special .offer-list li .offer-list-text{
-        padding: 11% 3% 0 3%;
-        width: 44%;
+        padding: 39px 10px 0 10px;
+        width: 150px;
         float: left;
     }
     .about-us{
@@ -341,26 +349,26 @@ ul{
     }
     .menu-cart .menu-choose-mobile ul li{
         margin-bottom: 10px;
-        border: 1px solid transparent;
+        width: 100%;
     }
     .menu-cart .menu-choose-mobile ul li:last-child{
         margin-bottom: 0px;
     }
-    .menu-cart .menu-choose-mobile ul:first-child li{
+    .menu-cart .menu-choose-mobile ul:first-child li a{
         float: right;
-        margin-left: 5px;
     }
-    .menu-cart .menu-choose-mobile ul:last-child li{
+    .menu-cart .menu-choose-mobile ul:last-child li a{
         float: left;
     }
-    .menu-cart .menu-choose-mobile li:hover{
+    .menu-cart .menu-choose-mobile a:hover{
         border: 1px solid #3c3c3c;
     }
     .menu-cart .menu-choose-mobile li a{
         text-decoration: none;
-        color: #3c3c3c;    
+        display: inline-block;
+        border: 1px solid transparent;
         padding: 5px 15px 3px 15px;
-	display: block;
+        color: #3c3c3c;    
     }
     .menu-cart .menu-list-pc{
         display: none;
@@ -386,12 +394,20 @@ ul{
         font-size: 16px;
         text-transform: uppercase;
     }
-    .menu-cart .menu-list .name:after{
+    .menu-cart .menu-list .name-price-container{
+        position: relative;
+        background-color: inherit;
+    }
+    .menu-cart .menu-list .name .name-wrapper{
+        width: 80%;
+    }
+    .menu-cart .menu-list .name-wrapper:after{
         content: '';
         position: absolute;
         bottom: 3px;
         width: 600px;
         height: 5px ;
+        z-index: 0;
         margin-left: 1%;
         background: url("../images/dot.jpg");
         background-repeat: space;
@@ -399,8 +415,11 @@ ul{
 
     }
     .menu-cart .menu-list .price{
-        text-align: right;
-        width: 2%;
+        position: absolute;
+        background-color: #fff;  
+        z-index: 2;
+        right: 0;
+        bottom: 0;
     }
     .menu-cart .menu-list .description{
         font-size: 12px;
@@ -489,7 +508,7 @@ ul{
     h2{
         margin: 0;
         padding: 0;
-        font-size: 2.1vw;
+        font-size: 40px;
         color: #3c3c3c;
         text-transform: capitalize;
         text-align: center;
@@ -507,11 +526,12 @@ ul{
     .page{
         margin: 0 auto;
         max-width: 1900px;
+        overflow: hidden;
     }
     .header{
-      padding-top: 50px;
       background: url("../images/header-background-pc.jpg") no-repeat;
-      padding-bottom: 56.25%;
+      width: 100%;
+      height: 965px;
       background-size: cover;
       background-position: center;
       position: relative;
@@ -549,58 +569,58 @@ ul{
         padding: 12px 19px;
         text-decoration: none;
         color: inherit;
-        font-size: 0.95vw;
-        
-    }
-    @media screen and (max-width: 950px) {        
-    .header .menu-drop li a{
-        padding: 6px 10px;
-    }    
-    .header .menu-drop{
-        right: 5%;
-    }    
-    }
+        font-size: 18px;        
+    } 
     .header .menu-drop li:hover{
         border: 1px solid #686868;
     } 
     .header .pc-description{
-        font-size: 2.1vw;
+        font-size: 40px;
         width: 100%;
         margin-bottom: 6.85%;
     }       
     .paragraph-underline{
         background: url("../images/paragraph-underline.png") no-repeat;
-        width: 13.42%;
-        padding-bottom: 1.842%;
-        height: 0;
-        background-size: cover;
-        margin: 0 auto  ;
-    }
-    .header .paragraph-underline{
-        background: url("../images/paragraph-underline.png") no-repeat;
-        background-size: cover;
-        width: 100%;
-        padding-bottom: 13.72%;
+        width: 255px;
+        height: 35px;
         margin: 0 auto  ;
     }
     .header .description-block{
         float: right;
-        width: 28.5%;
+        width: 30%;
         position: absolute;
         z-index: 2;
         top: 40%;
         right: 13%;
+        min-width: 255px;
     }
-    @media screen and (min-width: 1900px){        
-    h2{
-        font-size: 40px;
-    }
-    .header .pc-description{
-        font-size: 40px;
-    }
-    .header .menu-drop li a{ 
-        font-size: 18px;        
-    }  
+    @media screen and (max-width:1400px) {
+        .header .menu-drop{
+            float: none;
+            margin-bottom: 305px;   
+            position: absolute;
+            z-index: 2;
+            top: 4%;
+            right: 13%;
+            width: 30%;
+            min-width: 255px;
+            text-align: center;
+        }
+        .header .menu-drop li{
+            border: 1px solid transparent;
+            float: none;
+            margin-right: 0;
+        }
+        .header .menu-drop li a{ 
+            display: block;
+            padding: 12px 19px;
+            text-decoration: none;
+            color: inherit;
+            font-size: 18px;        
+        } 
+        .header .menu-drop li:hover{
+            border: 1px solid #686868;
+        }      
     }
     .yellow-bar{
         background-image: url("../images/yellow-bar-background-repeatable.jpg");
@@ -609,7 +629,7 @@ ul{
     }
     .yellow-bar h3{
         font-weight: bold;
-        font-size: 0.94vw;
+        font-size: 18px;
         margin-bottom: 25px;
     }
     .yellow-bar .list{
@@ -624,7 +644,7 @@ ul{
         margin-right: 11.66%;
     }
     .yellow-bar .list p{
-        font-size: 0.84vw;
+        font-size: 16px;
     }
     
     .yellow-bar .list li:last-child{
@@ -646,13 +666,37 @@ ul{
         background: url("../images/sweet.png") no-repeat;
         
     }
-    @media screen and (min-width: 1900px){
+    @media screen and (max-width:900px) {
+        .yellow-bar{
+            background-image: url("../images/yellow-bar-background-repeatable.jpg");
+            padding: 0 10%;
+            margin-bottom: 50px;
+        }
         .yellow-bar h3{
-            font-size: 18px;
+            margin-bottom: 25px;
         }
-        .yellow-bar .list p{
-            font-size: 16px;
+        .yellow-bar .list{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            width: 100%;
         }
+        .yellow-bar .list li{
+            padding-bottom: 35px;
+            margin-right: 0;
+            width: auto;
+            float: none;
+        }
+        .yellow-bar .list li:first-child{
+            padding-top: 35px;
+        }
+        .yellow-bar .list li:last-child{
+            padding-bottom: 70px;
+        }
+        .yellow-bar .list .img-holder{     
+            margin-bottom: 5%;
+            text-align: center;
+        }   
     }
     .month-special {
         margin-bottom: 110px;
@@ -663,17 +707,23 @@ ul{
     .month-special .paragraph-underline{
         margin-bottom: 40px;
     }
-    .month-special .offer-list-wrapper{
-        width: 78.5%;
+    .month-special .offer-list-wrapper {
+        width: 95%;
         margin: 0 auto 110px auto;
+        text-align: center;
+        
     }
     .month-special .offer-list{
         list-style: none;
+        display: inline-block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .month-special .offer-list h3{
         text-transform: none;
         font-weight: bold;
-        font-size: 00.94vw;
+        font-size: 018px;
     }
     .month-special .offer-list h3:after{
         content: "";
@@ -685,7 +735,7 @@ ul{
         margin-bottom: 4%;
     }
     .month-special .offer-list p{
-        font-size: 0.842vw;
+        font-size: 16px;
         margin-bottom: 4px;
         margin-bottom: 9.5%;
     }
@@ -694,34 +744,35 @@ ul{
         text-align: center;
         font-weight: bold;
         margin-bottom: 5%;
-        font-size: 00.94vw;
+        font-size: 018px;
     }
     .month-special .offer-list li{
         background-color: #f8f8f8;
-        width: 33%;
         float: left;
     }    
     .month-special .offer-list li .container{
-        width: 100%;
+        width: 500px;
     }   
     .month-special .offer-list li img{
         float: left;
-    }    
+    }     
+    .month-special .offer-list li img.mobile{
+        display: none;
+    }   
     .month-special .offer-list li .offer-list-text{
         padding: 12.2% 8.1% 0 8.1%;
         width: 33.8%;
         float: left;
     }
-    @media screen and (min-width: 1900px){
-        .month-special .offer-list h3{
-            font-size: 18px;
+
+    @media screen and (min-width:1052.6px) and (max-width: 1578.95px){
+        .month-special .offer-list li:last-child img{
+            float: right;
+        }    
+        .month-special .offer-list li:last-child .offer-list-text{
+            float: right;
         }
-        .month-special .offer-list p{
-            font-size: 16px;
-        }
-        .month-special .offer-list h4{
-            font-size: 18px;
-        }
+        
     }
     .about-us{
         background: #eeefef;
@@ -730,63 +781,49 @@ ul{
     }
     .about-us-wrapper{
         width: 100%;
-        padding-bottom: 50.8%;
+        height: 967px;
     }
     .about-us-text{
+        
         width: 34%;
-        margin-right: 18.6%;
+        min-width: 452px;
         position: absolute;
         z-index: 2;
-        top: 18%;
+        top: 24.8%;
         left: 10.5%;
     }
     .about-us h2{
         margin-bottom: 1.316%;
         width: 100%;
-        font-size: 2.1vw;
+        font-size: 40px;
         text-align: center;
     }
     .about-us .paragraph-underline{
         margin: 0 auto 6.76% auto;
-        padding-bottom: 5.5%;
-        width: 40%;
-        height: 0;
-        background-size: cover;
-
     }
     .about-us p{
-        width: 83%;
+        width: 100%;
         margin: 0 auto;
-        margin-bottom: 10px;
-        font-size: 1.6vw;
+        margin-bottom: 30px;
+        font-size: 30px;
+        line-height: 54px;
+    }
+    .about-us .photos{
     }
     .about-us .photos .background{
         background: url("../images/about-us-background-pc.png") no-repeat;
-        width: 43.45%;
-        padding-bottom: 33.1%;
-        background-size: cover;
+        width: 825px;
+        height: 628px;
         position: absolute;
-        z-index: 2;
-        top: 7.9%;
+        z-index: 1;
+        top: 158px;
         left: 52.6%;
     }
-    .about-us .photos .signature{
-        position: absolute;
-        z-index: 2;
-        top: 56%;
-        left: 30.8%;
+    .about-us .signature{
         background: url("../images/signature.png") no-repeat;
-        width: 12.24%;
-        padding-bottom: 8.275%;
-        background-size: cover;
-    }
-    @media screen and (min-width: 1900px){
-        .about-us h2{
-            font-size: 40px;
-        }
-        .about-us p{
-            font-size: 30px;
-        }
+        width: 213px;
+        height: 144px;
+        float: right;
     }
     .menu-cart{
         background-color: #fff;
@@ -826,18 +863,20 @@ ul{
         padding: 12px 19px;
         text-decoration: none;
         color: inherit;
-        font-size: 0.95vw;
+        font-size: 18px;
     }
     .menu-cart .menu-list-mobile{
         display: none;
     }
     .menu-cart .menu-list-pc{
         margin-bottom: 2.63%;
+        background-color: inherit;
     }
     .menu-cart .menu-list-pc .menu-list-column{
         width: 43%;
         float: left;
         margin-right: 14%;
+        background-color: inherit;
     }
     .menu-cart .menu-list-pc .menu-list-column:last-child{
         margin-right: 0;
@@ -851,6 +890,10 @@ ul{
     .menu-cart .menu-list td{
         padding: 0;
     }
+    .menu-cart .menu-list .name-price-container{
+        position: relative;
+        background-color: inherit;
+    }
     .menu-cart .menu-list .container td{        
 	    vertical-align:bottom;
     }
@@ -858,15 +901,19 @@ ul{
         text-align: left;
         overflow: hidden;
         position: relative;
-        font-size: 0.84vw;
+        font-size: 16px;
         text-transform: uppercase;
     }
-    .menu-cart .menu-list .name:after{
+    .menu-cart .menu-list .name .name-wrapper{
+        width: 80%;
+    }
+    .menu-cart .menu-list .name-wrapper:after{
         content: '';
         position: absolute;
-        bottom: 15%;
+        bottom: 3px;
         width: 1900px;
-        height: 20.8%;
+        height: 5px;
+        z-index: 0;
         margin-left: 0.5%;
         background: url("../images/dot.jpg");
         background-repeat: space;
@@ -874,77 +921,69 @@ ul{
 
     }
     .menu-cart .menu-list .price{
-        text-align: right;
-        width: 2.4%;
-        font-size: 0.94vw;
+        position: absolute;
+        background-color: #fff;  
+        font-size: 18px;
+        z-index: 2;
+        right: 0;
+        bottom: 0;
     }
     .menu-cart .menu-list .description{
-        font-size: 0.63vw;
+        font-size: 12px;
         font-family: "Merriweather-Italic";
-        line-height: 0.74vw;
-        padding-bottom: 2.4%;
-    }
-    @media screen and (min-width: 1900px){
-        .menu-cart .menu-list .name{
-            font-size: 16px;
-        }
-        .menu-cart .menu-list .description{
-            font-size: 12px;
-        }
-        .menu-cart .menu-list .price{
-            font-size: 18px;
-        }
+        line-height: 14px;
+        padding-bottom: 15px;
     }
     .contact{
         background: url("../images/contact-background.jpg") no-repeat;
         width: 100%;
-        padding-bottom: 51%;
+        height: 969px;
         background-size: cover;
-        background-position: right;
+        background-position: center;
         position: relative;
     }
     .contact .contact-wrapper{
         position: absolute;
         width: 31%;
         z-index: 50;
-        left: 58%;
+        right: 11%;
         top: 3.4%;
+        min-width: 255px;
     }
     .contact h2{
         margin-bottom: 5px;
 
     }
     .contact .paragraph-underline{
-        width: 43.3%;
-        padding-bottom: 5.94%;
-        margin-bottom: 8.5%;
+        width: 255px;
+        height: 35px;
+        margin-bottom: 50px;
     }
     .contact .info{
         width: 100%;
-        margin-bottom: 17%;
+        margin-bottom: 100px;
     }
     .contact .info h3{
-        font-size: 0.95vw;
+        font-size: 18px;
         font-family: "Merriweather-Bold";
         font-weight: bold;
         text-align: left;
-        margin-bottom: 1.7%;
+        margin-bottom: 4px;
     }
     .contact .info p{
-        font-size: 0.842vw;
+        font-size: 16px;
         text-align: left;
         line-height: 160%;
     }
     .contact .veggie{
         text-align: left;
         float: left;
-        width: 40%;
-        margin-right: 20%;
+        width: 216px;
     }
     .contact .reservations{
         text-align: left;
-        float: left;
-        width: 40%;
+        float: right;
+        width: 216px;
     }
     .contact .contact-us{
         margin-bottom: 55px;
@@ -955,12 +994,12 @@ ul{
         border: none;
         border-bottom: 1px solid #3c3c3c;
         width: 100%;
-        padding: 1.2%;
+        padding: 7px;
         margin-bottom: 45px;
-        font-size: 00.94vw;
+        font-size: 018px;
         font-family: "Merriweather-Italic";
         font-weight: 500;
-        margin-bottom: 10.5%;
+        margin-bottom: 62px;
     }
     .contact .contact-us .input-text:last-child{
         
@@ -977,30 +1016,30 @@ ul{
     }
     .contact .contact-us h3{
         text-align: left;
-        margin-bottom: 4%;
-        font-size: 00.94vw;
+        margin-bottom: 23px;
+        font-size: 018px;
     }
     .contact .contact-us button{
         background: transparent;
         border: 1px solid #3c3c3c;
-        padding: 2.5% 4% 2.3% 4%;
-        width: 20%;
+        padding: 14.5px 23.5px 13.5px 23.5px;
+        width: 105px;
         margin: 0 auto;
         display: block;
         cursor: pointer;
-        font-size: 00.94vw;
+        font-size: 018px;
     }
     .contact .social{
         position: absolute;
         bottom: 1.84%;
         right: 10.8%;
         z-index: 1;
-        width: 6.05%;
+        width: 115px;
     }
     .contact .social li{
         float: left;
-        margin-right: 14%;
-        width: 43%;
+        margin-right: 15px;
+        width: 50px;
     }
     .contact .social li a{
         width: 100%;
@@ -1014,29 +1053,56 @@ ul{
         position: absolute;
         bottom: 1.84%;
         left: 42.1%;
-        font-size: 00.94vw;
+        font-size: 018px;
         z-index: 1;
     }
-    @media screen and (min-width: 1900px){
+    @media screen and (max-width: 1450px){
+
+        .contact .veggie{
+            float: none;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+        }
+        .contact .reservations{
+            float: none;
+            margin-left: auto;
+            margin-right: auto;
+        }
         .contact .info h3{
-            font-size: 18px;
+            text-align: center;
         }
         .contact .info p{
-            font-size: 16px;
-        }
-        .contact .contact-us .input-text{
-            font-size: 18px;
-        }
-        .contact .contact-us h3{
-            font-size: 18px;
-        }
-        .contact .contact-us button{
-            font-size: 18px;
+            text-align: center;
         }
         .contact .copyright{
-            font-size: 18px;
+            left: 21%;
         }
-        
+    }
+    @media screen and (max-width: 822px){
+        .contact{
+            background-position: right;
+        }
+        .contact .contact-wrapper{
+            right: 10%;
+            width: 80%;
+        }
+        .contact .veggie{
+            float: left;
+            margin-bottom: 30px;
+        }
+        .contact .reservations{
+            float: right;
+        }
+        .contact .info h3{
+            text-align: left;
+        }
+        .contact .info p{
+            text-align: left;
+        }
+        .contact .copyright{
+            left: 10.5%;
+        }
     }
 }
     
